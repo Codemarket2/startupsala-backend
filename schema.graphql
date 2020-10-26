@@ -12,6 +12,10 @@ type Query {
 
   getAllServices: [Menu]
   getOneService(id: ID!): Menu
+
+  getOneAmenities(id: ID!): Amenities
+  getOneAmenitiesBySlug(slug: String!, userId: String!): Amenities
+  getAllAmenities: [Amenities]
 }
 
 type Mutation {
@@ -45,6 +49,22 @@ type Mutation {
     description: String
   ): Menu
   deleteOneIvdrip(id: ID!): String
+
+
+  createOneAmenities(
+    userId: String!
+    title: String!
+    slug: String!
+    amenities: [AmenityInput]
+  ): Amenities
+  updateOneAmenities(
+    id: ID!
+    title: String
+    slug: String
+    amenities: [AmenityInput]
+    published: Boolean
+  ): Amenities
+  deleteOneAmenities(id: ID!): String
 }
 
 type Menu {
@@ -54,11 +74,34 @@ type Menu {
   description: String!
 }
 
+type Amenities {
+  _id: ID!
+  userId: String!
+  title: String!
+  slug: String!
+  amenities: [Amenity]
+  published: Boolean!
+}
+
+type Amenity {
+  label: String
+  icon: String
+  value: String
+}
+
+input AmenityInput {
+  label: String
+  icon: String
+  value: String
+}
+
 # Entities
 type Book {
   id: ID!
   title: String
 }
+
+
 
 schema {
   query: Query

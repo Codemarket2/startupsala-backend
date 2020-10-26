@@ -107,3 +107,35 @@
   field: deleteOneService
   request: menu/deleteOneService.vtl
   response: response.vtl
+
+# Amenities
+- dataSource: amenities
+  type: Query
+  field: getAllAmenities
+  request: amenities/query.getAllAmenities.vtl
+  response: response.vtl
+- dataSource: amenities
+  type: Query
+  field: getOneAmenities
+  request: amenities/query.getOneAmenities.vtl
+  response: response.vtl
+- dataSource: amenities
+  type: Query
+  field: getOneAmenitiesBySlug
+  request: amenities/query.getOneAmenitiesBySlug.vtl
+  response: response.vtl
+- dataSource: amenities
+  type: Mutation
+  field: createOneAmenities
+  request: amenities/mutation.createOneAmenities.vtl
+  response: response.vtl
+- dataSource: amenities
+  type: Mutation
+  field: updateOneAmenities
+  request: amenities/mutation.updateOneAmenities.vtl
+  response: response.vtl
+- dataSource: amenities
+  type: Mutation
+  field: deleteOneAmenities
+  request: amenities/mutation.deleteOneAmenities.vtl
+  response: response.vtl

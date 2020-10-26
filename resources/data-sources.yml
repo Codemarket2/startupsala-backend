@@ -6,3 +6,7 @@
   name: menu
   config:
     functionName: menu_lambda
+- type: AWS_LAMBDA
+  name: amenities
+  config:
+    functionName: amenities_lambda
